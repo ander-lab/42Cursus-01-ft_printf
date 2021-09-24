@@ -1,39 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/24 00:31:47 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/09/24 19:21:34 by ajimenez         ###   ########.fr       */
+/*   Created: 2021/09/24 18:20:29 by ajimenez          #+#    #+#             */
+/*   Updated: 2021/09/24 19:21:12 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-int	ft_printf(const char *str, ...)
-{
-	ssize_t	trigger;
-	ssize_t	res;
-	size_t	aux;
-	va_list	ag;
+# include <stdarg.h>
+# include <fcntl.h>
+# include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
 
-	va_start(ag, str);
-	res = 1;
-	trigger = 0;
-	aux = 0;
-	while (str[aux])
-	{
-		trigger = ft_vprintf(str[aux], str[aux + 1], ag);
-		if (trigger < 0)
-			write(1, &str[aux], 1);
-		else if (trigger >= 0)
-			aux++;
-		else
-			res = 0;
-		++aux;
-	}
-	va_end(ag);
-	return (res);
-}
+int	ft_printf(const char *str, ...);
+
+#endif
