@@ -6,8 +6,24 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 19:48:06 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/09/24 19:48:07 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/09/26 19:09:33 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/ft_printf.h"
 
+int	ft_putstr(char *s)
+{
+	int	i;
+
+	if (s != 0)
+	{
+		i = 0;
+		while (s[i] != '\0')
+		{
+			ft_putchar(s[i]);
+			i++;
+		}
+	}
+	return (1);
+}
