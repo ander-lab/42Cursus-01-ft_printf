@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 00:31:47 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/09/26 18:56:38 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/09/27 09:58:09 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,7 @@ int	ft_printf(const char *str, ...)
 	{
 		trigger = ft_vprintf(str[aux], str[aux + 1], ag);
 		if (trigger < 0)
-		{
-			write(1, &str[aux], 1);
-			res++;
-		}
+			res += write(1, &str[aux], 1);
 		else if (trigger >= 0)
 		{
 			res += trigger;
