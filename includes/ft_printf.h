@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 18:20:29 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/09/26 19:13:33 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/09/27 16:48:57 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,15 @@
 /*
 ** SRCS
 */
-int	ft_printf(const char *str, ...);
+int		ft_printf(const char *str, ...);
 ssize_t	ft_vprintf(char c1, char c2, va_list ag);
 
 /*
 ** UTILS
 */
-int	ft_putchar(char c);
-int	ft_putnbr(int nb);
-int	ft_putstr(char *s);
+int		ft_putchar(char c);
+int		ft_putnbr(int nb);
+int		ft_putstr(char *s);
+char	*ft_itoh(unsigned long int n, int caps);
 
 #endif
