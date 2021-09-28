@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 19:48:06 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/09/26 19:09:33 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/09/28 15:38:11 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	ft_putstr(char *s)
 {
 	int	i;
 
+	i = 0;
 	if (s != 0)
 	{
 		i = 0;
@@ -25,5 +26,5 @@ int	ft_putstr(char *s)
 			i++;
 		}
 	}
-	return (1);
+	return (i);
 }
