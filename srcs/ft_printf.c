@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 00:31:47 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/09/27 09:58:09 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/09/28 16:42:36 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	ft_printf(const char *str, ...)
 {
-	ssize_t	trigger;
-	ssize_t	res;
+	int		trigger;
+	int		res;
 	size_t	aux;
 	va_list	ag;
 
 	va_start(ag, str);
-	res = 1;
+	res = 0;
 	trigger = 0;
 	aux = 0;
 	while (str[aux])
