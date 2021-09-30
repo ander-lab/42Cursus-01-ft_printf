@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/24 19:47:59 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/09/28 16:16:03 by ajimenez         ###   ########.fr       */
+/*   Created: 2021/09/27 17:43:42 by ajimenez          #+#    #+#             */
+/*   Updated: 2021/09/27 17:45:36 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	ft_putchar(char c)
+int	ft_putnbr_u(int nb)
 {
-	write (1, &c, 1);
+	unsigned int	res;
+
+	if (nb < 0)
+		return (0);
+	else
+		res = (unsigned int)nb;
+	if (res >= 10)
+		ft_putnbr(res / 10);
+	ft_putchar((char)(res % 10 + 48));
 	return (1);
 }

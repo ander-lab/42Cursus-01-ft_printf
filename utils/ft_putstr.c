@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 19:48:06 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/09/28 15:38:11 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/09/28 17:15:01 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,15 @@ int	ft_putstr(char *s)
 	int	i;
 
 	i = 0;
-	if (s != 0)
+	if (!s)
 	{
-		i = 0;
-		while (s[i] != '\0')
-		{
-			ft_putchar(s[i]);
-			i++;
-		}
+		i = write(1, "(null)", 6);
+		return (i);
+	}
+	while (s[i] != '\0')
+	{
+		ft_putchar(s[i]);
+		i++;
 	}
 	return (i);
 }

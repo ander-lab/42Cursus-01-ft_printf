@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 19:48:03 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/09/26 19:07:01 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/09/28 17:58:33 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	ft_putnbr(int nb)
 {
 	unsigned int	res;
+	int	r;
 
 	if (nb < 0)
 	{
@@ -24,7 +25,7 @@ int	ft_putnbr(int nb)
 	else
 		res = (unsigned int)nb;
 	if (res >= 10)
-		ft_putnbr(res / 10);
-	ft_putchar((char)(res % 10 + 48));
-	return (1);
+		r = ft_putnbr(res / 10);
+	r = ft_putchar((char)(res % 10 + 48));
+	return (r + 1);
 }

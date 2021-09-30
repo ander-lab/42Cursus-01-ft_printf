@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 00:31:47 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/09/28 16:42:36 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/09/28 17:07:12 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,3 +42,4 @@ int	ft_printf(const char *str, ...)
  * if the trigger < 0 is because the str doesn´t entered in any condition.
  * trigger = -1 so you write the char. If trigger >= 0 is because entered in one 
  * condition.*/
+
