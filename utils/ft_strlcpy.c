@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/24 19:48:03 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/09/30 20:17:12 by ajimenez         ###   ########.fr       */
+/*   Created: 2021/09/30 20:31:28 by ajimenez          #+#    #+#             */
+/*   Updated: 2021/09/30 20:32:18 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	ft_putnbr(int nb)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	unsigned int	res;
-	int	r;
+	unsigned int	i;
+	unsigned int	index;
 
-	r = 0;
-	if (nb < 0)
+	i = 0;
+	index = 0;
+	if (!dst || !src)
+		return (0);
+	while (src[i] != '\0')
+		i++;
+	if (dstsize != 0)
 	{
-		r += ft_putchar('-');
-		res = (unsigned int)(nb * -1);
+		while (src[index] != '\0' && index < (dstsize - 1))
+		{
+			dst[index] = src[index];
+			index++;
+		}
+		dst[index] = '\0';
 	}
-	else
-		res = (unsigned int)nb;
-	if (res >= 10)
-		r += ft_putnbr(res / 10);
-	r += ft_putchar((char)(res % 10 + 48));
-	return (r);
+	return (i);
 }
