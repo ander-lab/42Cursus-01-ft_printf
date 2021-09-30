@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 12:47:18 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/09/28 13:29:59 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/09/30 20:45:25 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,27 @@ static size_t	ft_strlen(char *str)
 	return (len);
 }
 
-char	*ft_putpointer(void *p)
+char	*ft_ptr(void *p)
 {
 	char	*ptr;
 	char	*hex;
+	size_t	aux_ptr;
+	size_t	aux_hex;
+	size_t	len;
 
-	while ()
+	hex = ft_itoh((uintptr_t)p, 0);
+	len = ft_strlen(hex);
+	ptr = malloc(sizeof(char) * (len + 4));
+	if (!ptr)
+		return (0);
+	aux_ptr = 0;
+	aux_hex = 0;
+	ft_strlcpy(ptr, "0x", 3);
+	while (ptr[aux_ptr])
+		aux_ptr++;
+	while (hex[aux_hex])
+		ptr[aux_ptr++] = hex[aux_hex++];
+	ptr[aux_ptr] = '\0';
+	free(hex);
+	return (ptr);
 }
