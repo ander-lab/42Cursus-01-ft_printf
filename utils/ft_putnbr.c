@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 19:48:03 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/09/30 20:17:12 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/10/01 12:05:23 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_putnbr(int nb)
 {
 	unsigned int	res;
-	int	r;
+	int				r;
 
 	r = 0;
 	if (nb < 0)
