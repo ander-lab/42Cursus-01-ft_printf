@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 18:20:29 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/09/30 20:34:52 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/10/01 12:02:50 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,18 @@
 /*
 ** SRCS
 */
-int		ft_printf(const char *str, ...);
-ssize_t	ft_vprintf(char c1, char c2, va_list ag);
+int				ft_printf(const char *str, ...);
+ssize_t			ft_vprintf(char c1, char c2, va_list ag);
 
 /*
 ** UTILS
 */
-char	*ft_ptr(void *p);
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
-int		ft_putchar(char c);
-int	ft_putnbr(int numbr);
-//int		ft_putnbr_u(int nb);
+char			*ft_ptr(void *p);
+size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
+int				ft_putchar(char c);
+int				ft_putnbr(int numbr);
 unsigned int	ft_putnbr_u(unsigned int nb);
-//unsigned int	ft_putnbr_u(unsigned int nb);
-int		ft_putstr(char *s);
-char	*ft_itoh(unsigned long int n, int caps);
+int				ft_putstr(char *s);
+char			*ft_itoh(unsigned long int n, int caps);
 
 #endif
