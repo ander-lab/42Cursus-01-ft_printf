@@ -6,7 +6,7 @@
 #    By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/24 19:48:13 by ajimenez          #+#    #+#              #
-#    Updated: 2021/09/28 15:59:28 by ajimenez         ###   ########.fr        #
+#    Updated: 2021/10/01 11:57:37 by ajimenez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,9 +19,11 @@ RM		= /bin/rm -f
 NAME	= libftprintf.a
 
 INCLUDE	= ./includes/ft_printf.h
-SRCS	= ./srcs/ft_printf.c ./srcs/ft_vprintf.c ./utils/ft_itoh.c \
-		  ./utils/ft_putnbr.c ./utils/ft_putstr.c ./utils/ft_putstr.c \
-		  ./utils/ft_putchar.c ./utils/ft_putnbr_u.c
+SRCS	= ./srcs/ft_printf.c ./srcs/ft_vprintf.c ./utils/ft_itoh.c\
+		  	./utils/ft_strlcpy.c ./utils/ft_ptr.c ./utils/ft_putnbr.c\
+			./utils/ft_putstr.c ./utils/ft_putstr.c ./utils/ft_putchar.c\
+			./utils/ft_putnbr_u.c
+
 
 OBJS	= $(SRCS:.c=.o)
 
