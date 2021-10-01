@@ -6,7 +6,7 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 19:56:29 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/09/30 12:02:22 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/10/01 12:03:33 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static size_t	ft_size(unsigned long int n)
 	return (size);
 }
 
-static void	hex_conversion(char *hex, size_t size, unsigned long int n, int caps)
+static void	hex_conversion(char *hex, size_t size, unsigned long int n, int c)
 {
 	unsigned long int	aux;
 
@@ -37,14 +37,15 @@ static void	hex_conversion(char *hex, size_t size, unsigned long int n, int caps
 		aux = n % 16;
 		if (aux < 10)
 			aux += 48;
-		else if (aux > 9 && caps == 0)
+		else if (aux > 9 && c == 0)
 			aux += 87;
-		else if (aux > 9 && caps == 1)
+		else if (aux > 9 && c == 1)
 			aux += 55;
 		hex[size--] = aux;
 		n /= 16;
 	}
 }
+
 char	*ft_itoh(unsigned long int n, int caps)
 {
 	size_t				size;
