@@ -6,16 +6,37 @@
 /*   By: ajimenez <ajimenez@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 19:25:36 by ajimenez          #+#    #+#             */
-/*   Updated: 2021/09/30 21:00:57 by ajimenez         ###   ########.fr       */
+/*   Updated: 2021/10/01 12:15:44 by ajimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
+static int	free_itoh(va_list ag, int caps)
+{
+	char	*aux;
+	int		trigger;
+
+	aux = ft_itoh(va_arg(ag, unsigned int), caps);
+	trigger = ft_putstr(aux);
+	free (aux);
+	return (trigger);
+}
+
+static int	free_ptr(va_list ag)
+{
+	char	*aux;
+	int		trigger;
+
+	aux = ft_ptr(va_arg(ag, unsigned int *));
+	trigger = ft_putstr(aux);
+	free (aux);
+	return (trigger);
+}
+
 ssize_t	ft_vprintf(char c1, char c2, va_list ag)
 {
 	int		trigger;
-	char	*aux;
 
 	if (c1 == '%' && c2 == 'c')
 		trigger = ft_putchar(va_arg(ag, int));
@@ -30,23 +51,11 @@ ssize_t	ft_vprintf(char c1, char c2, va_list ag)
 	else if (c1 == '%' && c2 == 'u')
 		trigger = ft_putnbr_u(va_arg(ag, unsigned int));
 	else if (c1 == '%' && c2 == 'x')
-	{
-		aux = ft_itoh(va_arg(ag, unsigned int), 0);
-		trigger = ft_putstr(aux);
-		free (aux);
-	}
+		trigger = free_itoh(ag, 0);
 	else if (c1 == '%' && c2 == 'X')
-	{
-		aux = ft_itoh(va_arg(ag, unsigned int), 1);
-		trigger = ft_putstr(aux);
-		free (aux);
-	}
+		trigger = free_itoh(ag, 1);
 	else if (c1 == '%' && c2 == 'p')
-	{
-		aux = ft_ptr(va_arg(ag, unsigned int *));
-		trigger = ft_putstr(aux);
-		free (aux);
-	}
+		trigger = free_ptr(ag);
 	else
 		trigger = -1;
 	return (trigger);
